@@ -9,7 +9,7 @@ import CircleIcon from "@mui/icons-material/Circle";
 
 const LeftSection = () => {
   return (
-    <Box>
+    <Box sx={{ borderRight: 1, borderColor: "#808191" }}>
       <Box
         sx={{
           display: "flex",
@@ -18,7 +18,7 @@ const LeftSection = () => {
           mr: 8,
         }}
       >
-        <Box sx={{ display: "flex", alignItems: "center", ml: 3, my: 3 }}>
+        <Box sx={{ display: "flex", alignItems: "center", ml: 3 }}>
           <Typography
             variant="h6"
             style={{
