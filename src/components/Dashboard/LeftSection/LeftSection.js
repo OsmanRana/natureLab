@@ -56,7 +56,7 @@ const LeftSection = () => {
         >
           <Typography
             variant="body2"
-            style={{
+            sx={{
               backgroundColor: "#3772FF",
               display: "inline-block",
               borderRadius: "50%",
