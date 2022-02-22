@@ -9,7 +9,13 @@ const LeftSectionDetails = ({ listItem }) => {
   const { name, icon } = listItem;
   return (
     <Box
-      sx={{ textAlign: "left", display: "flex", alignItems: "center", ml: 3, my:3 }}
+      sx={{
+        textAlign: "left",
+        display: "flex",
+        alignItems: "center",
+        ml: 3,
+        my: 3,
+      }}
     >
       <Box style={listStyle}>{icon}</Box>
       <Typography variant="body1" style={listStyle} sx={{ ml: 3 }}>
