@@ -256,7 +256,7 @@ const MiddleSection = () => {
         })}
       </Box>
       <Box>
-        {data.slice(0, 1).map((singleData) => (
+        {data.slice(1).map((singleData) => (
           <TableDetails
             key={singleData.index}
             singleData={singleData}
