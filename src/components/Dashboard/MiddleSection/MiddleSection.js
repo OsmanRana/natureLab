@@ -1,10 +1,13 @@
 import { Button, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import LaunchIcon from "@mui/icons-material/Launch";
 import LibraryAddCheckIcon from "@mui/icons-material/LibraryAddCheck";
 import Brightness1Icon from "@mui/icons-material/Brightness1";
+import tableHeader from "../../../mock/bottomTableHeader";
+import TableDetails from "./TableDetails";
+
 const commonSubsectionStyle = {
   backgroundColor: "#191B20",
   borderRadius: "24px",
@@ -34,6 +37,12 @@ const textStyle2 = {
 };
 
 const MiddleSection = () => {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    fetch("https://raw.githubusercontent.com/akshita151199/APIs/main/data")
+      .then((res) => res.json())
+      .then((data) => setData(data.data));
+  }, []);
   return (
     <Box sx={{ mx: 3 }}>
       <Box sx={{ display: "flex", justifyContent: "space-between" }}>
@@ -221,6 +230,38 @@ const MiddleSection = () => {
         >
           Second Tab
         </Typography>
+      </Box>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          backgroundColor: "#191B20",
+          py: 2,
+          px: 8,
+          borderRadius: 4,
+          my: 3,
+        }}
+      >
+        {tableHeader.map((header) => {
+          return (
+            <Typography
+              variant="caption"
+              key={header.name}
+              sx={{ textTransform: "uppercase", color: "#808191" }}
+            >
+              {header.name}
+            </Typography>
+          );
+        })}
+      </Box>
+      <Box>
+        {data.slice(0, 1).map((singleData) => (
+          <TableDetails
+            key={singleData.index}
+            singleData={singleData}
+          ></TableDetails>
+        ))}
       </Box>
     </Box>
   );
