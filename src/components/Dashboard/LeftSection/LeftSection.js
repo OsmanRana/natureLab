@@ -96,7 +96,7 @@ const LeftSection = () => {
           <Typography variant="body2">Buy $XYZ</Typography>
         </Box>
       </Box>
-      <Box sx={{ textAlign: "left", ml: 3, display: "flex" }}>
+      <Box sx={{ ml: 3, display: "flex" }}>
         <Box sx={{ pt: 1 }}>
           <LanguageIcon sx={{ color: "#808191" }} />
         </Box>

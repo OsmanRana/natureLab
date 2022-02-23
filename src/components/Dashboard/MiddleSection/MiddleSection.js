@@ -2,18 +2,18 @@ import { Button, Link, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
-import LaunchIcon from "@mui/icons-material/Launch";
+
 import LibraryAddCheckIcon from "@mui/icons-material/LibraryAddCheck";
 import Brightness1Icon from "@mui/icons-material/Brightness1";
 import tableHeader from "../../../mock/bottomTableHeader";
 import TableDetails from "./TableDetails";
 import CloseIcon from "@mui/icons-material/Close";
+import CustomLink from "../../../shared/CustomLink";
 
 const commonSubsectionStyle = {
   backgroundColor: "#191B20",
   borderRadius: "24px",
   height: "165px",
-  textAlign: "left",
   padding: "30px 40px",
 };
 
@@ -46,7 +46,7 @@ const MiddleSection = () => {
   }, []);
   return (
     <Box sx={{ borderLeft: 1, borderRight: 1, px: 3 }}>
-      <Box sx={{ display: "flex", justifyContent: "space-between", mb:3 }}>
+      <Box sx={{ display: "flex", justifyContent: "space-between", mb: 3 }}>
         <Link
           sx={{
             textDecoration: "none",
@@ -97,8 +97,7 @@ const MiddleSection = () => {
           color: "black",
           borderRadius: "50%",
           ml: 130,
-          mb: -2
-
+          mb: -2,
         }}
       />
       <Box
@@ -109,7 +108,6 @@ const MiddleSection = () => {
           backgroundColor: "#A3E3FF",
           borderRadius: 4,
           height: "86px",
-          textAlign: "left",
           px: 5,
           py: 3,
           mb: 5,
@@ -171,27 +169,7 @@ const MiddleSection = () => {
             </Typography>
           </Box>
         </Box>
-        <Box sx={{ mr: 5 }}>
-          <Button
-            variant="contained"
-            sx={{
-              color: "white",
-              backgroundColor: "#3772FF",
-              borderRadius: 3,
-              textTransform: "none",
-              px: 2,
-              py: 1,
-              my: 2,
-              "&: hover": {
-                backgroundColor: "white",
-                color: "#3772FF",
-              },
-            }}
-          >
-            <LaunchIcon sx={{ mr: 2 }} />
-            Custom Link
-          </Button>
-        </Box>
+        <CustomLink />
       </Box>
       <Box style={commonDisplay} sx={{ my: 3 }}>
         <Box style={commonSubsectionStyle} sx={{ width: 1, mr: 2 }}>
@@ -235,7 +213,7 @@ const MiddleSection = () => {
           </Box>
         </Box>
       </Box>
-      <Box sx={{ textAlign: "left" }}>
+      <Box>
         <Link
           sx={{
             textDecoration: "none",

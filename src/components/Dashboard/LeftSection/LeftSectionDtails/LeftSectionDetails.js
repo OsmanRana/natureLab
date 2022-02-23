@@ -10,7 +10,6 @@ const LeftSectionDetails = ({ listItem }) => {
   return (
     <Box
       sx={{
-        textAlign: "left",
         display: "flex",
         alignItems: "center",
         ml: 3,

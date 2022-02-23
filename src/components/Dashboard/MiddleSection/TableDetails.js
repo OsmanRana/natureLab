@@ -4,23 +4,15 @@ import React from "react";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
 const TableDetails = ({ singleData }) => {
-  console.log(singleData);
-  const { asset, chain, state, type, amount, referral_earnings, user } =
+  const { asset, chain, state, type, amount, referral_earnings, user, img } =
     singleData;
   return (
-    <Box sx={{ display: "flex", justifyContent: "space-evenly"}}>
+    <Box sx={{ display: "flex", justifyContent: "space-evenly" }}>
       <Box sx={{ display: "flex", alignItems: "center", mr: 4 }}>
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/BTC_Logo.svg/2000px-BTC_Logo.svg.png"
-          alt="logo"
-          width="30px"
-          height="30px"
-        />
-        <Box sx={{ml:2}}>
-          <Typography variant="body1" sx={{ textAlign: "left" }}>
-            {asset}
-          </Typography>
-          <Box sx={{ display: "flex", color: "#808191"}}>
+        <img src={img} alt="logo" width="30px" height="30px" />
+        <Box sx={{ ml: 2 }}>
+          <Typography variant="body1">{asset}</Typography>
+          <Box sx={{ display: "flex", color: "#808191" }}>
             <Typography variant="caption">{type}</Typography>
             <Box
               sx={{
@@ -41,7 +33,7 @@ const TableDetails = ({ singleData }) => {
           </Box>
         </Box>
       </Box>
-      <Box sx={{ml:2}}>
+      <Box sx={{ ml: 2, textAlign: "center" }}>
         <Typography variant="body1">{amount} BNB</Typography>
         <Typography
           variant="caption"
@@ -55,7 +47,7 @@ const TableDetails = ({ singleData }) => {
           {user}
         </Typography>
       </Box>
-      <Box>
+      <Box sx={{ textAlign: "center" }}>
         <Typography variant="body1">{referral_earnings} BNB</Typography>
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <Typography
