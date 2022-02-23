@@ -1,4 +1,4 @@
-import { Button, Typography } from "@mui/material";
+import { Button, Link, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
@@ -7,6 +7,7 @@ import LibraryAddCheckIcon from "@mui/icons-material/LibraryAddCheck";
 import Brightness1Icon from "@mui/icons-material/Brightness1";
 import tableHeader from "../../../mock/bottomTableHeader";
 import TableDetails from "./TableDetails";
+import CloseIcon from "@mui/icons-material/Close";
 
 const commonSubsectionStyle = {
   backgroundColor: "#191B20",
@@ -44,18 +45,25 @@ const MiddleSection = () => {
       .then((data) => setData(data.data));
   }, []);
   return (
-    <Box sx={{ mx: 3 }}>
-      <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-        <Typography
-          variant="h5"
+    <Box sx={{ borderLeft: 1, borderRight: 1, px: 3 }}>
+      <Box sx={{ display: "flex", justifyContent: "space-between", mb:3 }}>
+        <Link
           sx={{
-            display: "inline-block",
-            borderBottom: 2,
-            borderColor: "#3772FF",
+            textDecoration: "none",
+            color: "#808191",
+            fontSize: "28px",
+            "&:hover": {
+              color: "white",
+              fontSize: "30px",
+              borderBottom: 2,
+              borderColor: "#3772FF",
+              cursor: "pointer",
+            },
           }}
         >
+          {" "}
           Section
-        </Typography>
+        </Link>
         <Box
           sx={{
             display: "flex",
@@ -83,40 +91,59 @@ const MiddleSection = () => {
           </Typography>
         </Box>
       </Box>
+      <CloseIcon
+        sx={{
+          backgroundColor: "white",
+          color: "black",
+          borderRadius: "50%",
+          ml: 130,
+          mb: -2
+
+        }}
+      />
       <Box
         sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
           backgroundColor: "#A3E3FF",
           borderRadius: 4,
           height: "86px",
           textAlign: "left",
           px: 5,
           py: 3,
-          my: 5,
+          mb: 5,
         }}
       >
-        <Typography variant="body1" sx={{ color: "#2B2557" }}>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry.
-        </Typography>
-        <Button
-          variant="contained"
-          sx={{
-            color: "#2B2557",
-            backgroundColor: "white",
-            display: "inline-block",
-            borderRadius: 2,
-            textTransform: "none",
-            px: 2,
-            py: 1,
-            my: 2,
-            "&: hover": {
-              backgroundColor: "#3772FF",
-              color: "white",
-            },
-          }}
-        >
-          Tutorial
-        </Button>
+        <Box>
+          <Typography variant="body1" sx={{ color: "#2B2557" }}>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </Typography>
+          <Button
+            variant="contained"
+            sx={{
+              color: "#2B2557",
+              backgroundColor: "white",
+              display: "inline-block",
+              borderRadius: 2,
+              textTransform: "none",
+              px: 2,
+              py: 1,
+              my: 2,
+              "&: hover": {
+                backgroundColor: "#3772FF",
+                color: "white",
+              },
+            }}
+          >
+            Tutorial
+          </Button>
+        </Box>
+
+        <Box sx={{ mt: 3 }}>
+          <img src="/bitCoin.png" alt="Bitcoin" width="180px" height="130px" />
+        </Box>
       </Box>
       <Box
         style={commonSubsectionStyle}
@@ -209,27 +236,41 @@ const MiddleSection = () => {
         </Box>
       </Box>
       <Box sx={{ textAlign: "left" }}>
-        {" "}
-        <Typography
-          variant="h5"
+        <Link
           sx={{
-            display: "inline-block",
-            borderBottom: 2,
-            borderColor: "#3772FF",
-          }}
-        >
-          First Tab
-        </Typography>
-        <Typography
-          variant="h5"
-          sx={{
-            display: "inline-block",
+            textDecoration: "none",
             color: "#808191",
-            ml: 3,
+            fontSize: "28px",
+            "&:hover": {
+              color: "white",
+              fontSize: "30px",
+              borderBottom: 2,
+              borderColor: "#3772FF",
+              cursor: "pointer",
+            },
           }}
         >
+          {" "}
+          First Tab
+        </Link>
+        <Link
+          sx={{
+            ml: 3,
+            textDecoration: "none",
+            color: "#808191",
+            fontSize: "28px",
+            "&:hover": {
+              color: "white",
+              fontSize: "30px",
+              borderBottom: 2,
+              borderColor: "#3772FF",
+              cursor: "pointer",
+            },
+          }}
+        >
+          {" "}
           Second Tab
-        </Typography>
+        </Link>
       </Box>
       <Box
         sx={{
@@ -255,7 +296,14 @@ const MiddleSection = () => {
           );
         })}
       </Box>
-      <Box>
+      <Box
+        sx={{
+          backgroundColor: "rgb(25, 27, 32, .4)",
+          height: "65px",
+          pt: 2,
+          borderRadius: 4,
+        }}
+      >
         {data.slice(1).map((singleData) => (
           <TableDetails
             key={singleData.index}

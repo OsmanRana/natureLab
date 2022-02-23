@@ -8,7 +8,7 @@ const TableDetails = ({ singleData }) => {
   const { asset, chain, state, type, amount, referral_earnings, user } =
     singleData;
   return (
-    <Box sx={{ display: "flex", justifyContent: "space-evenly" }}>
+    <Box sx={{ display: "flex", justifyContent: "space-evenly"}}>
       <Box sx={{ display: "flex", alignItems: "center", mr: 4 }}>
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/BTC_Logo.svg/2000px-BTC_Logo.svg.png"

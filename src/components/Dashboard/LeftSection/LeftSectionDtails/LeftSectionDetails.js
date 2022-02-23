@@ -18,7 +18,13 @@ const LeftSectionDetails = ({ listItem }) => {
       }}
     >
       <Box style={listStyle}>{icon}</Box>
-      <Typography variant="body1" style={listStyle} sx={{ ml: 3 }}>
+      <Typography
+        variant="body1"
+        style={listStyle}
+        sx={{
+          ml: 3,
+        }}
+      >
         {name}
       </Typography>
     </Box>

@@ -14,7 +14,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const Dashboard = () => {
   return (
-    <Box>
+    <Box sx={{ mb: 16, mt: 8 }}>
       <Grid container spacing={2}>
         <Grid item md={2}>
           <LeftSection />

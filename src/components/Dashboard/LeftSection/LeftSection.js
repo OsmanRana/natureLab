@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Link, Typography } from "@mui/material";
 import React from "react";
 import sectionList from "../../../mock/leftSection";
 import LeftSectionDetails from "./LeftSectionDtails/LeftSectionDetails";
@@ -9,7 +9,7 @@ import CircleIcon from "@mui/icons-material/Circle";
 
 const LeftSection = () => {
   return (
-    <Box sx={{ borderRight: 1, borderColor: "#808191" }}>
+    <Box>
       <Box
         sx={{
           display: "flex",
@@ -35,12 +35,23 @@ const LeftSection = () => {
         </Box>
         <DehazeIcon />
       </Box>
-      <Box>
+      <Link
+        sx={{
+          textDecoration: "none",
+          cursor: "pointer",
+          "& : hover": {
+            backgroundColor: "#353945",
+            p: 1,
+            borderRadius: 4,
+            mr: 3,
+          },
+        }}
+      >
         {sectionList.map((listItem) => (
           <LeftSectionDetails key={listItem.id} listItem={listItem} />
         ))}
-      </Box>
-      <Box sx={{ display: "flex" }}>
+      </Link>
+      <Box sx={{ display: "flex", mt: 22 }}>
         <Box
           sx={{
             display: "flex",
